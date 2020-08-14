@@ -188,3 +188,18 @@ section.pie-chart {
     font-size: 2.92rem;
   }
 }
+.clear-button {
+  position: absolute;
+  right: 0;
+  top: calc(50% - 16px);
+  cursor: pointer;
+  z-index: 1;
+  display: none;
+}
+.course-wrapper {
+  position: relative;
+  padding-right: 32px;
+}
+.course-wrapper input {
+  padding-right: 32px!important;
+}

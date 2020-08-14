@@ -1,3 +1,10 @@
+const clearButton = document.querySelector('.clear-button');
+clearButton.addEventListener('click', () => {
+  const courseInputElt = document.getElementById('course');
+  courseInputElt.value = '';
+  clearButton.style.display = 'none';
+});
+
 function academicSessionAutocomplete() {
   console.log('Session input');
   semesterInput.innerHTML = '<option value="" disabled selected>Choose semester</option>';
@@ -17,6 +24,12 @@ function academicSessionAutocomplete() {
   });
 }
 function courseAutocomplete() {
+  const courseInputElt = document.getElementById('course');
+  if (courseInputElt.value.length > 0) {
+    clearButton.style.display = 'block';
+  } else {
+    clearButton.style.display = 'none';
+  }
   console.log('Course Input');
   const course = document.getElementById('course').value.match(/\((.*)\)/)[1];
   const sem = document.querySelector('select').selectedOptions[0].value;
